@@ -106,7 +106,7 @@ services:
 ```bash
   node-red
 ```
-## Screenshots
+## Para usar Node-RED, escribir la dirección que se muestra en la terminal (Ejemplo)
 
 ![App Screenshot](https://github.com/SaulA01745146/Quantum/blob/main/Node-RED.jpg)
 
