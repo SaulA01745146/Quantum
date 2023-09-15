@@ -1,0 +1,688 @@
+[
+    {
+        "id": "041ea793354b4921",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9dcee4a57c033586",
+        "type": "mqtt in",
+        "z": "041ea793354b4921",
+        "name": "",
+        "topic": "/Equipo3/Rover",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "c42210b0bf34e867",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 120,
+        "y": 180,
+        "wires": [
+            [
+                "b06ff3df551474c3",
+                "b84286d1bdb99f5a",
+                "a6bae4c0ba284525"
+            ]
+        ]
+    },
+    {
+        "id": "b06ff3df551474c3",
+        "type": "function",
+        "z": "041ea793354b4921",
+        "name": "function 2",
+        "func": "msg.payload = msg.payload.Posicion_x\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 80,
+        "wires": [
+            [
+                "a5933051a2fcf14d"
+            ]
+        ]
+    },
+    {
+        "id": "b84286d1bdb99f5a",
+        "type": "function",
+        "z": "041ea793354b4921",
+        "name": "function 3",
+        "func": "msg.payload = msg.payload.Posicion_y\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 180,
+        "wires": [
+            [
+                "58718ab3b4249722"
+            ]
+        ]
+    },
+    {
+        "id": "a6bae4c0ba284525",
+        "type": "function",
+        "z": "041ea793354b4921",
+        "name": "function 4",
+        "func": "msg.payload = msg.payload.Velocidad\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 280,
+        "wires": [
+            [
+                "d8b47be5a7d6a3be"
+            ]
+        ]
+    },
+    {
+        "id": "d8b47be5a7d6a3be",
+        "type": "ui_gauge",
+        "z": "041ea793354b4921",
+        "name": "",
+        "group": "dad6ec88fd8acb8e",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Velocidad",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-1",
+        "max": "1",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 580,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "a5933051a2fcf14d",
+        "type": "ui_text",
+        "z": "041ea793354b4921",
+        "group": "bed459397d6a192c",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Posición X",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 570,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "58718ab3b4249722",
+        "type": "ui_text",
+        "z": "041ea793354b4921",
+        "group": "bed459397d6a192c",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Posición Y",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 590,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "97110b83dd2000d8",
+        "type": "ui_text_input",
+        "z": "041ea793354b4921",
+        "name": "",
+        "label": "Coordenada X",
+        "tooltip": "",
+        "group": "fdeb88ff5bd1b449",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "number",
+        "delay": "0",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 380,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5b7cddf8daa76df0",
+        "type": "ui_text_input",
+        "z": "041ea793354b4921",
+        "name": "",
+        "label": "Coordenada Y",
+        "tooltip": "",
+        "group": "fdeb88ff5bd1b449",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "mode": "number",
+        "delay": "0",
+        "topic": "topic",
+        "sendOnBlur": true,
+        "className": "",
+        "topicType": "msg",
+        "x": 140,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "044090f5d203abcd",
+        "type": "ui_button",
+        "z": "041ea793354b4921",
+        "name": "",
+        "group": "fdeb88ff5bd1b449",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Iniciar proceso",
+        "tooltip": "",
+        "color": "White",
+        "bgcolor": "Green",
+        "className": "",
+        "icon": "",
+        "payload": "Proceso iniciado",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 140,
+        "y": 420,
+        "wires": [
+            [
+                "e7d4e269193c6b4f"
+            ]
+        ]
+    },
+    {
+        "id": "e7d4e269193c6b4f",
+        "type": "ui_toast",
+        "z": "041ea793354b4921",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "",
+        "x": 390,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "d796933c64eaf371",
+        "type": "ui_switch",
+        "z": "041ea793354b4921",
+        "name": "",
+        "label": "Brazo",
+        "tooltip": "",
+        "group": "e9c8d786aa32580c",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "Habilitado",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "Deshabilitado",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 170,
+        "y": 460,
+        "wires": [
+            [
+                "0f34368bb403538d"
+            ]
+        ]
+    },
+    {
+        "id": "0f34368bb403538d",
+        "type": "ui_text",
+        "z": "041ea793354b4921",
+        "group": "e9c8d786aa32580c",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "Estado",
+        "label": "",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 360,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "030a3587957b86b8",
+        "type": "mqtt in",
+        "z": "041ea793354b4921",
+        "name": "",
+        "topic": "/Equipo3/video",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "c42210b0bf34e867",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 100,
+        "y": 580,
+        "wires": [
+            [
+                "e2e4ce90b19a1eea"
+            ]
+        ]
+    },
+    {
+        "id": "4482dd64c273647d",
+        "type": "ui_template",
+        "z": "041ea793354b4921",
+        "group": "79156a4b0cfa58a1",
+        "name": "Video",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "format": "<div>\n    <img src={{msg.payload}} width=\"300px\" height=\"300px\">\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 630,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e2e4ce90b19a1eea",
+        "type": "base64",
+        "z": "041ea793354b4921",
+        "name": "",
+        "action": "",
+        "property": "payload",
+        "x": 260,
+        "y": 580,
+        "wires": [
+            [
+                "8550af516348bd76"
+            ]
+        ]
+    },
+    {
+        "id": "8550af516348bd76",
+        "type": "jimp-image",
+        "z": "041ea793354b4921",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "ret": "img",
+        "parameter1": "",
+        "parameter1Type": "msg",
+        "parameter2": "",
+        "parameter2Type": "msg",
+        "parameter3": "",
+        "parameter3Type": "msg",
+        "parameter4": "",
+        "parameter4Type": "msg",
+        "parameter5": "",
+        "parameter5Type": "msg",
+        "parameter6": "",
+        "parameter6Type": "msg",
+        "parameter7": "",
+        "parameter7Type": "msg",
+        "parameter8": "",
+        "parameter8Type": "msg",
+        "sendProperty": "payload",
+        "sendPropertyType": "msg",
+        "parameterCount": 0,
+        "jimpFunction": "none",
+        "selectedJimpFunction": {
+            "name": "none",
+            "fn": "none",
+            "description": "Just loads the image.",
+            "parameters": []
+        },
+        "x": 390,
+        "y": 580,
+        "wires": [
+            [
+                "25c6ec41c2840c27"
+            ]
+        ]
+    },
+    {
+        "id": "25c6ec41c2840c27",
+        "type": "jimp-image",
+        "z": "041ea793354b4921",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "ret": "b64",
+        "parameter1": "",
+        "parameter1Type": "msg",
+        "parameter2": "",
+        "parameter2Type": "msg",
+        "parameter3": "",
+        "parameter3Type": "msg",
+        "parameter4": "",
+        "parameter4Type": "msg",
+        "parameter5": "",
+        "parameter5Type": "msg",
+        "parameter6": "",
+        "parameter6Type": "msg",
+        "parameter7": "",
+        "parameter7Type": "msg",
+        "parameter8": "",
+        "parameter8Type": "msg",
+        "sendProperty": "payload",
+        "sendPropertyType": "msg",
+        "parameterCount": 0,
+        "jimpFunction": "none",
+        "selectedJimpFunction": {
+            "name": "none",
+            "fn": "none",
+            "description": "Just loads the image.",
+            "parameters": []
+        },
+        "x": 510,
+        "y": 580,
+        "wires": [
+            [
+                "4482dd64c273647d"
+            ]
+        ]
+    },
+    {
+        "id": "81e53722c90ffef3",
+        "type": "mqtt in",
+        "z": "041ea793354b4921",
+        "name": "",
+        "topic": "/Equipo3/Actuador",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "c42210b0bf34e867",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 680,
+        "wires": [
+            [
+                "3f9b800406d1bc57"
+            ]
+        ]
+    },
+    {
+        "id": "3f9b800406d1bc57",
+        "type": "function",
+        "z": "041ea793354b4921",
+        "name": "function 9",
+        "func": "msg.payload = msg.payload.Temperatura\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 680,
+        "wires": [
+            [
+                "e75266717194cab5"
+            ]
+        ]
+    },
+    {
+        "id": "e75266717194cab5",
+        "type": "ui_list",
+        "z": "041ea793354b4921",
+        "group": "5d154c5be033e9df",
+        "name": "Actuador",
+        "order": 2,
+        "width": "2",
+        "height": "4",
+        "lineType": "two",
+        "actionType": "none",
+        "allowHTML": true,
+        "outputs": 0,
+        "topic": "",
+        "x": 440,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "3281be10fb7fe36e",
+        "type": "comment",
+        "z": "041ea793354b4921",
+        "name": "Obtener el valor deseado para mostrarlo en el Dashboard",
+        "info": "",
+        "x": 530,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "730f4088e757d5d5",
+        "type": "comment",
+        "z": "041ea793354b4921",
+        "name": "Conectar a MQTT",
+        "info": "Suscribirse al tópico de MQTT del Rover",
+        "x": 130,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "baf97a5c7e61d807",
+        "type": "comment",
+        "z": "041ea793354b4921",
+        "name": "Obtener el valor deseado para mostrarlo en el Dashboard",
+        "info": "",
+        "x": 530,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "f62d6cb7eb3b4e23",
+        "type": "comment",
+        "z": "041ea793354b4921",
+        "name": "Obtener el valor deseado para mostrarlo en el Dashboard",
+        "info": "",
+        "x": 530,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "98a4d42f12750df6",
+        "type": "comment",
+        "z": "041ea793354b4921",
+        "name": "Nodos que envían valores o instrucciones por medio de MQTT al Rover",
+        "info": "",
+        "x": 310,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "5b23a3cf9169636b",
+        "type": "comment",
+        "z": "041ea793354b4921",
+        "name": "Conectarse al tópico de video del Rover y ajustar la imágen para mostrarla en el Dashboard",
+        "info": "",
+        "x": 330,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "36f33105e29fd86d",
+        "type": "comment",
+        "z": "041ea793354b4921",
+        "name": "Obtener los valores del actuador y mostrarlos en formato de lista",
+        "info": "",
+        "x": 250,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "c42210b0bf34e867",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "10.48.60.51",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "dad6ec88fd8acb8e",
+        "type": "ui_group",
+        "name": "Sensores",
+        "tab": "2c0d66aa6f0b5747",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "bed459397d6a192c",
+        "type": "ui_group",
+        "name": "Posición",
+        "tab": "2c0d66aa6f0b5747",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "fdeb88ff5bd1b449",
+        "type": "ui_group",
+        "name": "Destino",
+        "tab": "2c0d66aa6f0b5747",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e9c8d786aa32580c",
+        "type": "ui_group",
+        "name": "Brazo",
+        "tab": "102d4d150808812b",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "79156a4b0cfa58a1",
+        "type": "ui_group",
+        "name": "Cámara Rover",
+        "tab": "2c0d66aa6f0b5747",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5d154c5be033e9df",
+        "type": "ui_group",
+        "name": "Posición actuador",
+        "tab": "102d4d150808812b",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2c0d66aa6f0b5747",
+        "type": "ui_tab",
+        "name": "Rover",
+        "icon": "mi-videogame_asset",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "102d4d150808812b",
+        "type": "ui_tab",
+        "name": "Brazo",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
