@@ -105,4 +105,8 @@ services:
 
 ```bash
   node-red
+
+## Para usar Node-RED, escribir la dirección que se muestra en la terminal al correrlo
+
+![App Screenshot](https://github.com/SaulA01745146/Quantum/blob/main/Node-RED.jpg)
 ```
